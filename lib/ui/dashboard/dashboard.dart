@@ -1,5 +1,6 @@
 import 'package:apphelper/helperapp.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:web/control/managstate.dart';
 import 'package:web/model/menu_icon.dart';
 import 'package:web/model/neo_container.dart';
@@ -10,29 +11,41 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ManagState state = AppHelpers.getState<ManagState>();
-    return Container(
-      padding: const EdgeInsets.all(10),
-      child: NeoCon(
-        width: 50,
-        radius: 10,
-        color: Colors.blue.shade50,
-        child: Container(
-          margin: const EdgeInsets.all(5),
-          child: ListView.separated(
-            itemCount: state.menu.length,
-            itemBuilder: (BuildContext context, int index) {
-                return iconMenu(index,data:state.menu[index]);
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return const SizedBox(height: 10,);
-            },),
-          ),
-        ),
+    return Consumer<ManagState>(
+        builder: (context, state, child) {
+          return
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: NeoCon(
+                  width: 50,
+                  radius: 10,
+                  color: Colors.blue.shade50,
+                  child: Container(
+                    margin: const EdgeInsets.all(5),
+                    child: ListView.separated(
+                      itemCount: state.menu.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return iconMenu(index, state.menu[index].status,
+                            data: state.menu[index]);
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const SizedBox(height: 10,);
+                      },),
+                  ),
+                ),
+              ),
+              Expanded(child: Stack(
+                children: [...state.listActivePage],
+              ))
+            ],
+          );
+        }
     );
   }
 
-  Widget iconMenu(index, {required MenuIcon data}) {
+  Widget iconMenu(index,bool active, {required MenuIcon data}) {
     ManagState state = AppHelpers.getState<ManagState>();
     return InkWell(
       onTap: ()=>state.setActiveMenu(index),
@@ -43,13 +56,13 @@ class Dashboard extends StatelessWidget {
             height: 35,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.white.withAlpha(80),
+              color: active?Colors.white:Colors.white.withAlpha(80),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if(data.status!)
+                if(active)
                 Container(
                   margin: const EdgeInsets.all(3),
                   decoration: BoxDecoration(
@@ -58,7 +71,7 @@ class Dashboard extends StatelessWidget {
                   ),
                   width: 3
                 ),
-                const Icon(Icons.android),
+                Icon(data.icon),
               ],
             )),
       ),

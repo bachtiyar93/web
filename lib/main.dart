@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:web/control/basestate.dart';
+import 'package:web/control/profilestate.dart';
 import 'package:web/routes.dart';
 import 'package:web/ui/base.dart';
 import 'package:web/ui/home/home.dart';
@@ -38,5 +39,7 @@ List<SingleChildWidget> providers =[
   ChangeNotifierProvider(
       create: (_)=> BaseState()),
   ChangeNotifierProvider(
-      create: (_)=> ManagState())
+      create: (_)=> ManagState()),
+  ChangeNotifierProvider(
+      create: (_)=> ProfileState()),
 ];

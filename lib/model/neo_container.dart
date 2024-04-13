@@ -30,7 +30,7 @@ class NeoCon extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-               color.mix(Colors.black, .1),
+               color.mix(Colors.black12, .05),
                color,
                color,
               color.mix(Colors.white, .5),

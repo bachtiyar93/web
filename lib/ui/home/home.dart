@@ -1,7 +1,9 @@
 import 'package:apphelper/helperapp.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:web/control/managstate.dart';
+import 'package:web/generated/assets.dart';
 import 'package:web/model/media.dart';
 
 class Home extends StatelessWidget {
@@ -9,21 +11,31 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ManagState state = AppHelpers.getState<ManagState>();
-        return Scaffold(
-          body: Listener(
-            onPointerDown: _onPointerDown,
-            child: Stack(
-              children: [
-                SizedBox(
-                    height: Media.height(),
-                    width: Media.height()>Media.width()?Media.height()*3:Media.width(),
-                    child: Image.asset('wallpaper.png', fit: Media.height()>Media.width()?BoxFit.fitHeight:BoxFit.fill,)),
-                ...state.listDashboard
-              ],
-            ),
+    return Consumer<ManagState>(
+        builder: (context, state, child) {
+          return
+      Scaffold(
+        body: Listener(
+          onPointerDown: _onPointerDown,
+          child: Stack(
+            children: [
+              SizedBox(
+                  height: Media.height(),
+                  width: Media.height() > Media.width()
+                      ? Media.height() * 3
+                      : Media.width(),
+                  child: Image.asset(
+                    Assets.assetsWallpaper,
+                    fit: Media.height() > Media.width()
+                        ? BoxFit.fitHeight
+                        : BoxFit.fill,
+                  )),
+              ...state.listDashboard
+            ],
           ),
-        );
+        ),
+      );
+    });
   }
 }
 

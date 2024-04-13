@@ -5,5 +5,5 @@ class MenuIcon {
   final String appName;
   bool status;
 
-  MenuIcon({required this.icon, required this.appName, this.status=false});
+  MenuIcon({required this.icon, required this.appName, required this.status});
 }
