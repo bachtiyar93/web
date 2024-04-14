@@ -1,4 +1,3 @@
-import 'package:apphelper/helperapp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -6,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:web/control/managstate.dart';
 import 'package:web/control/profilestate.dart';
 import 'package:web/generated/assets.dart';
+import 'package:web/model/closepage.dart';
 import 'package:web/model/media.dart';
 import 'package:web/model/neo_container.dart';
 
@@ -14,45 +14,18 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ManagState control = AppHelpers.getState<ManagState>();
+    ManagState control = Media.getState<ManagState>(context);
     return Consumer<ProfileState>(builder: (context, state, child){
+      state.init('Profile', control);
       return Center(
         child: NeoCon(
-          height: Media.height(),
-          width: Media.width(),
+          height: state.height,
+          width: state.width,
           radius: 10,
           color: Media.col().background,
           child:  Column(
             children: [
-              Container(
-                height: 30,
-                margin: const EdgeInsets.symmetric(horizontal: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                        height: 15,
-                        width: 15,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.orange,
-                        ),
-                        child: const Icon(Icons.linear_scale, size: 10,)),
-                    const SizedBox(width: 5,),
-                    MaterialButton(
-                      onPressed: ()=> control.closePage('Profile'),
-                      color: Colors.red,
-                      height: 15,
-                      minWidth: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), ),
-                      child:  Container(
-                          height: 15,
-                          width: 15,
-                          child: const Icon(Icons.close, size: 10,)), )
-                  ],
-                ),
-              ),
+              closePage(state, menuIcon: state.menuIcon, closePage:state.menuIcon.appName),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

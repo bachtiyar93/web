@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Media {
+  static T getState<T extends ChangeNotifier>(context,{bool listen = true}){
+    return Provider.of<T>(context, listen:listen);
+  }
   static height(){
     return MediaQuery.of(AppHelpers.navigation.currentContext!).size.height;
   }

@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: providers,
       child: appRootTree(
-          title: "Super View",
+          title: "Taufiq Super app",
           themeMode: ThemeMode.light,
           initPage: Main.base,
           routes: {

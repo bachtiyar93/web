@@ -15,10 +15,10 @@ class ManagState extends ChangeNotifier{
     return document.onContextMenu.listen((event) => event.preventDefault());
   }
   List<MenuIcon> menu =[
-    MenuIcon(icon: Icons.person, appName: 'Profile', status: false),
-    MenuIcon(icon: Icons.book, appName: 'Book', status: false),
-    MenuIcon(icon: Icons.navigation, appName: 'Navigation', status: false),
-    MenuIcon(icon: Icons.ac_unit, appName: 'Cold', status: false),
+    MenuIcon(icon: Icons.person, appName: 'Profile', status: false, windowMode: 1),
+    MenuIcon(icon: Icons.book, appName: 'Book', status: false, windowMode: 1),
+    MenuIcon(icon: Icons.navigation, appName: 'Navigation', status: false, windowMode: 1),
+    MenuIcon(icon: Icons.ac_unit, appName: 'Cold', status: false, windowMode: 1),
   ];
 
   void setActiveMenu(index) {
