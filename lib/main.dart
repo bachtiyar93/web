@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:web/control/basestate.dart';
-import 'package:web/control/profilestate.dart';
+import 'package:web/ui/profile/profilestate.dart';
+import 'package:web/ui/project/projectstate.dart';
+import 'package:web/ui/settings/settingstate.dart';
 import 'package:web/routes.dart';
 import 'package:web/ui/base.dart';
 import 'package:web/ui/home/home.dart';
@@ -42,4 +44,8 @@ List<SingleChildWidget> providers =[
       create: (_)=> ManagState()),
   ChangeNotifierProvider(
       create: (_)=> ProfileState()),
+  ChangeNotifierProvider(
+      create: (_)=> SettingState()),
+  ChangeNotifierProvider(
+      create: (_)=> ProjectState())
 ];

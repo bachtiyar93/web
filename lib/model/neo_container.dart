@@ -9,14 +9,13 @@ class NeoCon extends StatelessWidget {
   final double? width;
 
   NeoCon({
-    Key? key,
+    super.key,
     required this.child,
     this.radius = 1.0,
     this.color=Colors.white,
     this.height,
     this.width
-  })  : this.blurOffset = Offset(radius / 2, radius / 2),
-        super(key: key);
+  })  : blurOffset = Offset(radius / 2, radius / 2);
 
   @override
   Widget build(BuildContext context) {

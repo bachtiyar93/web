@@ -1,9 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:web/control/managstate.dart';
 import 'package:web/model/media.dart';
 import 'package:web/model/menu_icon.dart';
+import 'package:web/model/string_icon.dart';
 
-class ProfileState extends ChangeNotifier{
+class SettingState extends ChangeNotifier{
   double height=Media.height();
   double width=Media.width();
   late MenuIcon menuIcon;
@@ -13,7 +14,7 @@ class ProfileState extends ChangeNotifier{
   minimize() {
     menuIcon.windowMode=0;
     height=Media.height()*0.7;
-    width=Media.width()*0.7;
+    width=Media.width()*0.3;
     notifyListeners();
   }
   maximize(){
@@ -22,5 +23,9 @@ class ProfileState extends ChangeNotifier{
     width=Media.width();
     notifyListeners();
   }
+  List<StringIcon> menuSettings=[
+    StringIcon('Language',Icons.flag_outlined),
+    StringIcon('Theme', Icons.theater_comedy_outlined),
+    StringIcon('About Us',Icons.help_outline_outlined)];
 
 }

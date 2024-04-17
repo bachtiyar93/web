@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:web/control/managstate.dart';
-import 'package:web/control/profilestate.dart';
+import 'package:web/ui/profile/profilestate.dart';
 import 'package:web/generated/assets.dart';
 import 'package:web/model/closepage.dart';
 import 'package:web/model/media.dart';
@@ -25,7 +23,7 @@ class Profile extends StatelessWidget {
           color: Media.col().background,
           child:  Column(
             children: [
-              closePage(state, menuIcon: state.menuIcon, closePage:state.menuIcon.appName),
+              closePage(state, menuIcon: state.menuIcon),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -5,6 +5,7 @@ class MenuIcon {
   final String appName;
   bool status;
   int windowMode;
+  Widget? widget;
 
-  MenuIcon({required this.icon, required this.appName, required this.status, required this.windowMode});
+  MenuIcon({required this.icon, required this.appName, required this.status, required this.windowMode, this.widget});
 }

@@ -21,4 +21,7 @@ class Media {
   static ColorScheme col(){
     return Theme.of(AppHelpers.navigation.currentContext!).colorScheme;
   }
+  static ThemeData themeQ(){
+    return Theme.of(AppHelpers.navigation.currentContext!);
+  }
 }
