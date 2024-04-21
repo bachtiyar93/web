@@ -1,4 +1,4 @@
-import 'package:apphelper/helperapp.dart';
+import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:web/control/managstate.dart';
@@ -26,25 +26,33 @@ class Project extends StatelessWidget {
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: state.menuIcon.windowMode==1?4:3,
-                    childAspectRatio: 4/1
+                    childAspectRatio: 4/2
                   ),
                   itemCount: state.icons.length,
                   itemBuilder: (context, index) {
                     return Tooltip(
                       message: state.icons[index].string,
-                      child: MaterialButton(
-                        onPressed: ()=> AppHelpers.showWarning(text: 'Under maintenance', dissmisable: true),
-                        child: Container(
-                          padding: const EdgeInsets.all(10),
-                          alignment: Alignment.center,
-                          child: NeoCon(
-                            radius: 15,
-                            color: Media.col().background,
-                            child: ListTile(
-                              title: Icon( state.icons[index].icon,
-                                size: 50, color: Media.themeQ().iconTheme.color, ),
-                              subtitle: Text(state.icons[index].string, style: Media.themeQ().textTheme.bodyMedium, textAlign: TextAlign.center,),
-                            ),
+                      child: NeoCon(
+                        radius: 15,
+                        height: Media.height(),
+                        width: Media.width(),
+                        margin: const EdgeInsets.all(30),
+                        color: Media.col().background,
+                        child: MaterialButton(
+                          onPressed: ()=> AppHelpers.showWarning(text: 'Under maintenance', dissmisable: true),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                child: Container(
+                                  height: Media.width()*0.06,
+                                  width: Media.width()*0.1,
+                                  padding: EdgeInsets.all(10),
+                                  child: Image.asset( state.icons[index].assets,
+                                    fit: BoxFit.cover, ),
+                                ),
+                              ),
+                              Text(state.icons[index].string, style: Media.themeQ().textTheme.labelLarge,)
+                            ],
                           ),
                         ),
                       ),

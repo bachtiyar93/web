@@ -1,4 +1,4 @@
-import 'package:apphelper/helperwidget.dart';
+import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -23,10 +23,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: providers,
-      child: appRootTree(
+      child: MaterialApp(
           title: "Taufiq Super app",
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData.light(useMaterial3: true),
+          darkTheme: ThemeData.dark(useMaterial3: true),
+          navigatorKey: AppHelpers.navigation.navigatorKey,
+          scaffoldMessengerKey: AppHelpers.navigation.messengerKey,
           themeMode: ThemeMode.light,
-          initPage: Main.base,
+          initialRoute: Main.base,
           routes: {
             Main.base:(_)=> const Base(),
             Main.home:(_)=> const Home()

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:web/control/managstate.dart';
+import 'package:web/generated/assets.dart';
 import 'package:web/model/media.dart';
 import 'package:web/model/menu_icon.dart';
-import 'package:web/model/string_icon.dart';
+import 'package:web/model/string_image.dart';
 
 class ProjectState extends ChangeNotifier{
   double height=Media.height();
@@ -23,16 +24,16 @@ class ProjectState extends ChangeNotifier{
     width=Media.width();
     notifyListeners();
   }
-  List<StringIcon> icons = [
-    StringIcon('Pawoon POS', Icons.point_of_sale_sharp),
-    StringIcon('Twintulip Ware', Icons.shop),
-    StringIcon('Sofast Automobile', Icons.car_repair),
-    StringIcon('Pawoon Owner', Icons.point_of_sale),
-    StringIcon('Persist Personalia', Icons.person),
-    StringIcon('Persist Reqruitment', Icons.people),
-    StringIcon('IKN Super Apps', Icons.real_estate_agent),
-    StringIcon('Mandiri DQMS', Icons.money),
-    StringIcon('Shopee', Icons.shop),
-    StringIcon('Dana', Icons.money)
+  List<StringImage> icons = [
+    StringImage('Pawoon POS', Assets.pawoon),
+    StringImage('Twintulip Ware', Assets.twintulip),
+    StringImage('Sofast Automobile', ''),
+    StringImage('Pawoon Owner', ''),
+    StringImage('Persist Personalia', ''),
+    StringImage('Persist Reqruitment', ''),
+    StringImage('IKN Super Apps', ''),
+    StringImage('Mandiri DQMS', ''),
+    StringImage('Shopee', ''),
+    StringImage('Dana', '')
   ];
 }

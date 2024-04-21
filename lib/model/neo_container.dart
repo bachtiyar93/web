@@ -7,6 +7,10 @@ class NeoCon extends StatelessWidget {
   final Color color;
   final double? height;
   final double? width;
+  final EdgeInsetsGeometry? padding;
+
+  final EdgeInsetsGeometry? margin;
+  final AlignmentGeometry? alignment;
 
   NeoCon({
     super.key,
@@ -14,7 +18,10 @@ class NeoCon extends StatelessWidget {
     this.radius = 1.0,
     this.color=Colors.white,
     this.height,
-    this.width
+    this.width,
+    this.padding,
+    this.margin,
+    this.alignment
   })  : blurOffset = Offset(radius / 2, radius / 2);
 
   @override
@@ -22,6 +29,9 @@ class NeoCon extends StatelessWidget {
     return AnimatedContainer(
       height: height,
       width: width,
+      padding: padding,
+      margin: margin,
+      alignment: alignment,
       duration: const Duration(milliseconds: 150),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
