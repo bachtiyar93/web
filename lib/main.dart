@@ -1,10 +1,12 @@
-import 'package:apphelper/helperwidget.dart';
+import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:web/control/basestate.dart';
 import 'package:web/ui/profile/profilestate.dart';
 import 'package:web/ui/project/projectstate.dart';
+import 'package:web/ui/project/smartbid/managsmartbid.dart';
+import 'package:web/ui/project/smartbid/ui/home/home.dart';
 import 'package:web/ui/settings/settingstate.dart';
 import 'package:web/routes.dart';
 import 'package:web/ui/base.dart';
@@ -23,14 +25,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: providers,
-      child: appRootTree(
+      child: MaterialApp(
           title: "Taufiq Super app",
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData.light(useMaterial3: true),
+          darkTheme: ThemeData.dark(useMaterial3: true),
+          navigatorKey: AppHelpers.navigation.navigatorKey,
+          scaffoldMessengerKey: AppHelpers.navigation.messengerKey,
           themeMode: ThemeMode.light,
-          initPage: Main.base,
+          initialRoute: Main.base,
           routes: {
             Main.base:(_)=> const Base(),
-            Main.home:(_)=> const Home()
-
+            Main.home:(_)=> const Home(),
+            Main.smartbid:(_)=> const HomeSmartbid(),
           }),
 
     );
@@ -47,5 +54,6 @@ List<SingleChildWidget> providers =[
   ChangeNotifierProvider(
       create: (_)=> SettingState()),
   ChangeNotifierProvider(
-      create: (_)=> ProjectState())
+      create: (_)=> ProjectState()),
+  ChangeNotifierProvider(create: (_)=> ManagSmartbid())
 ];

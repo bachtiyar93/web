@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:web/control/managstate.dart';
+import 'package:web/generated/assets.dart';
 import 'package:web/model/media.dart';
 import 'package:web/model/menu_icon.dart';
-import 'package:web/model/string_icon.dart';
+import 'package:web/model/string_image.dart';
+import 'package:web/routes.dart';
 
 class ProjectState extends ChangeNotifier{
   double height=Media.height();
@@ -23,16 +25,16 @@ class ProjectState extends ChangeNotifier{
     width=Media.width();
     notifyListeners();
   }
-  List<StringIcon> icons = [
-    StringIcon('Pawoon POS', Icons.point_of_sale_sharp),
-    StringIcon('Twintulip Ware', Icons.shop),
-    StringIcon('Sofast Automobile', Icons.car_repair),
-    StringIcon('Pawoon Owner', Icons.point_of_sale),
-    StringIcon('Persist Personalia', Icons.person),
-    StringIcon('Persist Reqruitment', Icons.people),
-    StringIcon('IKN Super Apps', Icons.real_estate_agent),
-    StringIcon('Mandiri DQMS', Icons.money),
-    StringIcon('Shopee', Icons.shop),
-    StringIcon('Dana', Icons.money)
+  List<StringImageProject> projectMenu = [
+    StringImageProject('Pawoon POS', Assets.assetsPawoon,''),
+    StringImageProject('Twintulip Ware', Assets.assetsTwintulip,''),
+    StringImageProject('SmartBid Cars', Assets.assetsSmartbid,Main.smartbid),
+    StringImageProject('Pawoon Owner', '',''),
+    StringImageProject('Persist Personalia', '',''),
+    StringImageProject('Persist Reqruitment', '',''),
+    StringImageProject('IKN Super Apps', '',''),
+    StringImageProject('Mandiri DQMS', '',''),
+    StringImageProject('Shopee', '',''),
+    StringImageProject('Dana', '','')
   ];
 }
