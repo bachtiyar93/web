@@ -399,7 +399,7 @@ class _BookCarState extends State<BookCar> {
                     ),
 
                     Text(
-                      "USD ${(widget.car.discount*widget.car.price/100).toStringAsFixed(2)}",
+                      "USD ${(widget.car.price-(widget.car.discount*widget.car.price/100)).toStringAsFixed(2)}",
                       style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 14,

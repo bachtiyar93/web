@@ -34,10 +34,24 @@ class HomeSmartbid extends StatelessWidget {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 16),
-            child: Icon(
-              Icons.shopping_cart,
-              color: Colors.black,
-              size: 28,
+            child: Tooltip(
+              message: 'User account',
+              child: Icon(
+                Icons.person,
+                color: Colors.black,
+                size: 28,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 16),
+            child: Tooltip(
+              message: 'Cart',
+              child: Icon(
+                Icons.shopping_cart,
+                color: Colors.black,
+                size: 28,
+              ),
             ),
           )
         ], systemOverlayStyle: SystemUiOverlayStyle.dark,

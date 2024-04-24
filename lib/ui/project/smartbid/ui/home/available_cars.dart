@@ -84,7 +84,7 @@ class AvailableCars extends StatelessWidget {
                       child: GridView.count(
                         physics: const BouncingScrollPhysics(),
                         childAspectRatio: 1 / 1.55,
-                        crossAxisCount: 3,
+                        crossAxisCount: 5,
                         crossAxisSpacing: 15,
                         mainAxisSpacing: 15,
                         children: state.listCars.map((item) {
