@@ -7,11 +7,13 @@ import 'package:web/ui/profile/profilestate.dart';
 import 'package:web/ui/project/projectstate.dart';
 import 'package:web/ui/project/smartbid/managsmartbid.dart';
 import 'package:web/ui/project/smartbid/ui/home/home.dart';
+import 'package:web/ui/project/smartbiddashboard/screens/main/main_screen.dart';
 import 'package:web/ui/settings/settingstate.dart';
 import 'package:web/routes.dart';
 import 'package:web/ui/base.dart';
 import 'package:web/ui/home/home.dart';
 import 'control/managstate.dart';
+import 'ui/project/smartbiddashboard/controllers/MenuAppController.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
             Main.base:(_)=> const Base(),
             Main.home:(_)=> const Home(),
             Main.smartbid:(_)=> const HomeSmartbid(),
+            Main.smartbiddash:(_)=> const MainScreenSmartbidDashboard(),
           }),
 
     );
@@ -55,5 +58,8 @@ List<SingleChildWidget> providers =[
       create: (_)=> SettingState()),
   ChangeNotifierProvider(
       create: (_)=> ProjectState()),
-  ChangeNotifierProvider(create: (_)=> ManagSmartbid())
+  ChangeNotifierProvider(create: (_)=> ManagSmartbid()),
+  ChangeNotifierProvider(
+    create: (context) => MenuAppController(),
+  ),
 ];

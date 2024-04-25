@@ -23,6 +23,8 @@ dependencies:
   universal_html: ^2.2.4
   http: ^1.1.0
   google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  fl_chart: ^0.67.0
 
 dev_dependencies:
   flutter_test:
@@ -40,6 +42,9 @@ flutter:
     - assets/
     - assets/smartbid/brand/
     - assets/smartbid/
+    - assets/smartbid/dashboard/
+    - assets/smartbid/dashboard/icons/
+    - assets/smartbid/dashboard/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

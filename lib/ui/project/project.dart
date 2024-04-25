@@ -82,7 +82,8 @@ class Project extends StatelessWidget {
                                                 margin: const EdgeInsets.all(5),
                                                 child:  Text('CMS Preview', style: Media.themeQ().textTheme.labelLarge,)),
                                             onPressed: () {
-                                              // Handle button 3 press
+                                              AppHelpers.navigation.openPageNamedNoNav(
+                                                  Main.smartbiddash);
                                             },
                                           ),
                                         ],

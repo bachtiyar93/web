@@ -293,7 +293,24 @@ class _BookCarState extends State<BookCar> {
                                 "All Risk",
                                 'by ASTRA',
                               ),
-
+                              const SizedBox(
+                                width: 16,
+                              ),
+                              buildPricePerPeriod(
+                                "Grade",
+                                widget.car.condition?"SS":'B',
+                                widget.car.condition?'Special':'Good',
+                              ),
+                              if(widget.car.condition)
+                              const SizedBox(
+                                width: 16,
+                              ),
+                              if(widget.car.condition)
+                              buildPricePerPeriod(
+                                "Layanan",
+                                "SWITCH",
+                                'Tukar Unit',
+                              ),
                             ],
                           ),
                         ),
