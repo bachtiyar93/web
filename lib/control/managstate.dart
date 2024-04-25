@@ -1,5 +1,7 @@
 import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:web/model/menu_icon.dart';
 import 'package:web/ui/dashboard/dashboard.dart';
 import 'package:universal_html/html.dart';
@@ -35,6 +37,14 @@ class ManagState extends ChangeNotifier{
     menu.where((element) => element.appName==activePage!.appName).first.status=false;
     activePage=null;
     notifyListeners();
+  }
+
+  Future<Uint8List?> pickImage() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      return pickedFile.readAsBytes();
+    }
+    return null;
   }
 
 }

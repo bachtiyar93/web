@@ -1,7 +1,5 @@
 import 'package:apphelper/apphelpers.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:web/model/neo_container.dart';
 import 'package:web/ui/project/smartbid/managsmartbid.dart';
 import 'package:web/ui/project/smartbid/model/cars_model.dart';

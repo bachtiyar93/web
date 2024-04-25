@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:web/generated/assets.dart';
-import 'package:web/model/media.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({

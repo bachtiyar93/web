@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:web/model/media.dart';
 import 'package:web/model/neo_container.dart';
 
 import '../../../constants.dart';

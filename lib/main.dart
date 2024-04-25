@@ -7,6 +7,7 @@ import 'package:web/ui/profile/profilestate.dart';
 import 'package:web/ui/project/projectstate.dart';
 import 'package:web/ui/project/smartbid/managsmartbid.dart';
 import 'package:web/ui/project/smartbid/ui/home/home.dart';
+import 'package:web/ui/project/smartbiddashboard/screens/dashboard/components/form_add_cars.dart';
 import 'package:web/ui/project/smartbiddashboard/screens/main/main_screen.dart';
 import 'package:web/ui/settings/settingstate.dart';
 import 'package:web/routes.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
             Main.home:(_)=> const Home(),
             Main.smartbid:(_)=> const HomeSmartbid(),
             Main.smartbiddash:(_)=> const MainScreenSmartbidDashboard(),
+            Main.formcar:(_)=> MobilForm(),
           }),
 
     );

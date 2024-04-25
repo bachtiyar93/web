@@ -1,4 +1,6 @@
+import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
+import 'package:web/ui/project/smartbid/managsmartbid.dart';
 import 'package:web/ui/project/smartbiddashboard/models/MyFiles.dart';
 import 'package:web/ui/project/smartbiddashboard/responsive.dart';
 
@@ -13,6 +15,7 @@ class MyFiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size _size = MediaQuery.of(context).size;
+    ManagSmartbid state = AppHelpers.getState<ManagSmartbid>();
     return Column(
       children: [
         Row(
@@ -32,7 +35,7 @@ class MyFiles extends StatelessWidget {
                           defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () => state.activateFormCar(),
                   icon: const Icon(Icons.car_repair),
                   label: const Text("Add Cars"),
                 ),
