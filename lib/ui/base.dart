@@ -23,7 +23,7 @@ class Base extends StatelessWidget {
               ],
             ),
           ),
-        ); // Ganti dengan widget Anda
+        );
       },
     );
   }

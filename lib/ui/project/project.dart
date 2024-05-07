@@ -1,6 +1,7 @@
 import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web/control/managstate.dart';
 import 'package:web/model/closepage.dart';
 import 'package:web/model/media.dart';
@@ -41,7 +42,7 @@ class Project extends StatelessWidget {
                         color: Media.col().background,
                         child: MaterialButton(
                           onPressed: (){
-                            if(state.projectMenu[index].opressed==Main.smartbid){
+                            if(state.projectMenu[index].opressed==Main.ecommerce){
                                 showDialog(
                                   context: context,
                                   builder: (BuildContext context) {
@@ -57,8 +58,7 @@ class Project extends StatelessWidget {
                                                 color: Media.themeQ().cardColor,
                                                 margin: const EdgeInsets.all(5),
                                                 child:  Text('Mobile Preview',style: Media.themeQ().textTheme.labelLarge)),
-                                            onPressed: () {
-                                            },
+                                            onPressed: () => launchLink(),
                                           ),
                                           MaterialButton(
                                             child: NeoCon(
@@ -83,7 +83,7 @@ class Project extends StatelessWidget {
                                                 child:  Text('CMS Preview', style: Media.themeQ().textTheme.labelLarge,)),
                                             onPressed: () {
                                               AppHelpers.navigation.openPageNamedNoNav(
-                                                  Main.smartbiddash);
+                                                  Main.dashboard);
                                             },
                                           ),
                                         ],
@@ -122,5 +122,14 @@ class Project extends StatelessWidget {
         ),
       );
     });
+  }
+
+  launchLink() async {
+    const url = 'https://drive.usercontent.google.com/u/0/uc?id=1S6dOxh5BqqMh9v2pNMTADYsObhwYsvSa&export=download';
+    if (await canLaunchUrl(Uri.parse(url))) {
+    await launchUrl(Uri.parse(url));
+    } else {
+    throw 'Could not launch $url';
+    }
   }
 }

@@ -26,9 +26,9 @@ class ProjectState extends ChangeNotifier{
     notifyListeners();
   }
   List<StringImageProject> projectMenu = [
-    StringImageProject('Pawoon POS', Assets.assetsPawoon,''),
+    StringImageProject('App Bar', Assets.assetsPawoon,''),
     StringImageProject('Twintulip Ware', Assets.assetsTwintulip,''),
-    StringImageProject('SmartBid Cars', Assets.assetsSmartbid,Main.smartbid),
+    StringImageProject('SmartBid Cars', Assets.assetsSmartbid,Main.ecommerce),
     StringImageProject('Pawoon Owner', '',''),
     StringImageProject('Persist Personalia', '',''),
     StringImageProject('Persist Reqruitment', '',''),

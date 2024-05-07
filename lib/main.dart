@@ -40,8 +40,8 @@ class MyApp extends StatelessWidget {
           routes: {
             Main.base:(_)=> const Base(),
             Main.home:(_)=> const Home(),
-            Main.smartbid:(_)=> const HomeSmartbid(),
-            Main.smartbiddash:(_)=> const MainScreenSmartbidDashboard(),
+            Main.ecommerce:(_)=> const HomeSmartbid(),
+            Main.dashboard:(_)=> const MainScreenSmartbidDashboard(),
             Main.formcar:(_)=> MobilForm(),
           }),
 

@@ -3,10 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:web/model/media.dart';
 import 'package:web/model/neo_container.dart';
+import 'package:web/ui/project/smartbiddashboard/constants.dart';
 import 'package:web/ui/project/smartbiddashboard/controllers/MenuAppController.dart';
-import 'package:web/ui/project/smartbiddashboard/responsive.dart';
-
-import '../../../constants.dart';
+import 'package:apphelper/responsive.dart';
 
 class Header extends StatelessWidget {
   const Header({

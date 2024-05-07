@@ -1,10 +1,9 @@
 import 'package:apphelper/apphelpers.dart';
 import 'package:flutter/material.dart';
 import 'package:web/ui/project/smartbid/managsmartbid.dart';
+import 'package:web/ui/project/smartbiddashboard/constants.dart';
 import 'package:web/ui/project/smartbiddashboard/models/MyFiles.dart';
-import 'package:web/ui/project/smartbiddashboard/responsive.dart';
-
-import '../../../constants.dart';
+import 'package:apphelper/responsive.dart';
 import 'file_info_card.dart';
 
 class MyFiles extends StatelessWidget {

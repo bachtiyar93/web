@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:web/ui/project/smartbiddashboard/controllers/MenuAppController.dart';
-import 'package:web/ui/project/smartbiddashboard/responsive.dart';
 import 'package:web/ui/project/smartbiddashboard/screens/dashboard/dashboard_screen.dart';
-
 import 'components/side_menu.dart';
+import 'package:apphelper/responsive.dart';
 
 class MainScreenSmartbidDashboard extends StatelessWidget {
   const MainScreenSmartbidDashboard({super.key});

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:web/ui/project/smartbiddashboard/responsive.dart';
+import 'package:web/ui/project/smartbiddashboard/constants.dart';
 import 'package:web/ui/project/smartbiddashboard/screens/dashboard/components/my_fields.dart';
-import '../../constants.dart';
 import 'components/header.dart';
-
+import 'package:apphelper/responsive.dart';
 import 'components/recent_files.dart';
 import 'components/storage_details.dart';
 
